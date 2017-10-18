@@ -1,0 +1,42 @@
+{{ context_var|safe }}
+{% autoescape off %}
+<style>
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+</style>
+        <div class="post">
+            <h1>Image data</a></h1>
+            <h3 style="color:crimson" >Below graph belongs to a pretrained model.</h3>
+            <h3 style="color:crimson" >Upload training and label files below.</h3>
+             <h3 style="color:cornflowerblue" > Anomaly Count is {{ anomaly_count }} </h3>
+            <p><img alt="embedded" src="{{img}}" /></p>     
+            <form action="/import/" method="post" enctype="multipart/form-data">{% csrf_token %}
+               <h3>Labels File</h3> <input class="upload-btn-wrapper" type="file" name="labels_file" />
+               <h3> Training File </h3><input  class="upload-btn-wrapper"  type="file" name="training_file"/>
+            <input class="btn" type="submit" value="Upload Training files" />
+
+            </form>
+        </div>
+{% endautoescape %}
