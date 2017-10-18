@@ -25,7 +25,7 @@ SECRET_KEY = 'b5v2hh%o+1l7kk$!phg%&7+4)@$6*5dart)1+c0ec+%$b!6k)o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['anomalydetection.herokuapp.com',]
 
 
 # Application definition
