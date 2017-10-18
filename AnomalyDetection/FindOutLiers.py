@@ -45,8 +45,7 @@ def return_numpy_array_csv(filename,request):
       return tr_data
 
 def train_classifier(tr_data,label_data):
-    clf = svm.OneClassSVM(nu=0.0
-    5, kernel="rbf", gamma=0.1)
+    clf = svm.OneClassSVM(nu=0.05, kernel="rbf", gamma=0.1)
     clf.fit(tr_data,label_data)
     pred = clf.predict(tr_data) 
     normal = tr_data[pred == 1]
