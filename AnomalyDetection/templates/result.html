@@ -33,8 +33,12 @@
              <h3 style="color:cornflowerblue" > Anomaly Count is {{ anomaly_count }} </h3>
             <p><img alt="embedded" src="{{img}}" /></p>     
             <form action="/import/" method="post" enctype="multipart/form-data">{% csrf_token %}
-               <h3>Labels File</h3> <input class="upload-btn-wrapper" type="file" name="labels_file" />
-               <h3> Training File </h3><input  class="upload-btn-wrapper"  type="file" name="training_file"/>
+              <div style="display: inline-block">  
+                  <h3>Labels File</h3> <input class="upload-btn-wrapper" type="file" name="labels_file" /> Single 1,0 values for labels ,1 if success  .
+              </div>
+              <div style="display: inline-block">
+                  <h3> Training File </h3><input  class="upload-btn-wrapper"  type="file" name="training_file"/>
+              </div>
             <input class="btn" type="submit" value="Upload Training files" />
 
             </form>
